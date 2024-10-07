@@ -1,24 +1,28 @@
+# Laravel Auditing Filesystem Driver
+
+This is a fork of the [betapeak/laravel-auditing-filesystem](https://github.com/betapeak/laravel-auditing-filesystem) package. The original package was not maintained and had some issues with the latest version of Laravel. This fork aims to fix those issues and add some new features.
+
 This driver provides the ability to save your model audits in CSV files. It's integrated with Laravel's Storage system
 so you can use any of the disks specified in your application as the storage destinations of the audit files.
 
 We also recognize that many systems generate a substantial amount of audit actions and that's why the package allows
 to specify how the audit files are generated - from a flat catch-all file to files generated for each hour of operation.
 
-### Installation
+## Installation
 
-This driver requires that you are using `owen-it/laravel-auditing: ^7.0`. Provided this is fulfilled,
+This driver requires that you are using `owen-it/laravel-auditing`. Provided this is fulfilled,
 you can install the driver like so:
 
-```
-composer require betapeak/laravel-auditing-filesystem
+```php
+composer require kyagie/laravel-auditing-filesystem
 ```
 
-### Setup
+## Setup
 
 You need to add the following config entries in config/audit.php if you need to change the default behaviour of the driver.
 The `drivers` key of the config file should look like so:
 
-```
+```php
     ...
     'drivers' => [
         'database' => [
@@ -44,16 +48,15 @@ For simplicity, there are just 4 settings you can adjust and they're described b
 | filename | (string) | The filename of the audit file. If logging_type is different from 'single', this filename is ignored as it's being dynamically generated |
 | logging_type | (string) | Defines how the audit files are being generated. One of 'single', 'daily' or 'hourly'. |
 
-
-### Usage
+## Usage
 
 You can use the driver in any Auditable model (locally) like so:
 
-```
+```php
 <?php
 namespace App\Models;
 
-use BetaPeak\Auditing\Drivers\FilesystemDriver;
+use Kyagie\Auditing\Drivers\FilesystemDriver;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
@@ -65,7 +68,7 @@ class SomeModel extends Model implements AuditableContract
     /**
      * Filesystem Audit Driver
      *
-     * @var BetaPeak\Auditing\Drivers\Filesystem
+     * @var Kyagie\Auditing\Drivers\Filesystem
      */
     protected $auditDriver = FilesystemDriver::class;
 
@@ -75,17 +78,17 @@ class SomeModel extends Model implements AuditableContract
 
 or globally like so in config/audit.php:
 
-```
+```php
 return [
     // ...
 
-    'driver' => BetaPeak\Auditing\Drivers\FilesystemDriver::class,
+    'driver' => Kyagie\Auditing\Drivers\FilesystemDriver::class,
 
     // ...
 ];
 ```
 
-More information on using community drivers with owen-it/laravel-auditing can be found on their [homepage](http://www.laravel-auditing.com/docs/7.0/audit-drivers)
+More information on using community drivers with owen-it/laravel-auditing can be found on their [homepage](https://laravel-auditing.com/guide/audit-drivers.html)
 
 ### Testing
 

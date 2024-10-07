@@ -1,6 +1,6 @@
 <?php
 
-namespace BetaPeak\Auditing\Drivers\Tests\Models;
+namespace Kyagie\Auditing\Drivers\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;

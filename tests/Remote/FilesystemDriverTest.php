@@ -1,10 +1,10 @@
 <?php
 
-namespace BetaPeak\Auditing\Drivers\Tests\Remote;
+namespace Kyagie\Auditing\Drivers\Tests\Remote;
 
 use Aws\S3\S3Client;
-use BetaPeak\Auditing\Drivers\FilesystemDriver;
-use BetaPeak\Auditing\Drivers\Tests\Models\Person;
+use Kyagie\Auditing\Drivers\FilesystemDriver;
+use Kyagie\Auditing\Drivers\Tests\Models\Person;
 use Illuminate\Support\Facades\Storage;
 use Orchestra\Testbench\TestCase;
 

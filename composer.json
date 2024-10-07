@@ -1,56 +1,36 @@
 {
-    "name": "betapeak/laravel-auditing-filesystem",
+    "name": "kyagie/laravel-auditing-filesystem",
     "description": "A filesystem driver for the owen-it/laravel-auditing package. Allows storage of the audits in CSV files, across all registered Laravel disks.",
-    "keywords": [
-        "accountability",
-        "audit",
-        "auditing",
-        "changes",
-        "eloquent",
-        "history",
-        "log",
-        "logging",
-        "observer",
-        "laravel",
-        "lumen",
-        "record",
-        "revision",
-        "tracking",
-        "filesystem",
-        "csv",
-        "export"
-    ],
     "type": "package",
-    "license": "MIT",
-    "support": {
-        "issues": "https://github.com/betapeak/laravel-auditing-filesystem/issues",
-        "source": "https://github.com/betapeak/laravel-auditing-filesystem"
-    },
-    "authors": [
-        {
-            "name": "Yasen Slavov",
-            "email": "yasen@betapeak.com"
-        }
-    ],
     "require": {
-        "php": ">=7.0",
+        "php": "^8.3",
         "ext-json": "*",
-        "owen-it/laravel-auditing": "^10.0",
-        "league/csv": "^9.0",
-        "league/flysystem": "~1.0"
+        "owen-it/laravel-auditing": "^13.6",
+        "league/csv": "^9.16",
+        "league/flysystem": "^3.29"
     },
+    "require-dev": {
+        "league/flysystem": "^3.29",
+        "league/flysystem-aws-s3-v3": "^3.29",
+        "phpunit/phpunit": "^11",
+        "orchestra/testbench": "^9.5",
+        "nesbot/carbon": "^3.8"
+    },
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "BetaPeak\\Auditing\\Drivers\\": "src/"
+            "Kyagie\\Auditing\\Drivers\\": "src/"
         }
     },
     "autoload-dev": {
-      "psr-4": {
-        "BetaPeak\\Auditing\\Drivers\\Tests\\": "tests/"
-      }
-  },
-    "require-dev": {
-        "orchestra/testbench": "^5.1",
-        "league/flysystem-aws-s3-v3": "^1.0"
-    }
+        "psr-4": {
+            "Kyagie\\Auditing\\Drivers\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arthur Kyagulanyi",
+            "email": "kyagieboy99@gmail.com"
+        }
+    ]
 }

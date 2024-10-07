@@ -1,9 +1,9 @@
 <?php
 
-namespace BetaPeak\Auditing\Drivers\Tests\Local;
+namespace Kyagie\Auditing\Drivers\Tests\Local;
 
-use BetaPeak\Auditing\Drivers\FilesystemDriver;
-use BetaPeak\Auditing\Drivers\Tests\Models\Person;
+use Kyagie\Auditing\Drivers\FilesystemDriver;
+use Kyagie\Auditing\Drivers\Tests\Models\Person;
 use Carbon\Carbon;
 use Orchestra\Testbench\TestCase;
 
@@ -46,7 +46,7 @@ class FilesystemDriverTest extends TestCase
     public function testAuditSingle()
     {
         $auditable = new Person();
-
+        
         $driver = app(FilesystemDriver::class);
 
         $driver->audit($auditable);

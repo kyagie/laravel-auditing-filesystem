@@ -1,6 +1,6 @@
 <?php
 
-namespace BetaPeak\Auditing\Drivers;
+namespace Kyagie\Auditing\Drivers;
 
 use DateTime;
 use Illuminate\Filesystem\FilesystemAdapter;
@@ -113,17 +113,17 @@ class FilesystemDriver implements AuditDriver
     {
         switch ($this->fileLoggingType) {
             case 'single':
-                return $this->dir.$this->filename;
+                return $this->dir . '/' . $this->filename;
 
             case 'daily':
                 $date = (new \DateTime('now'))->format('Y-m-d');
 
-                return $this->dir."audit-$date.csv";
+                return $this->dir . "/audit-$date.csv";
 
             case 'hourly':
                 $dateTime = (new \DateTime('now'))->format('Y-m-d-H');
 
-                return $this->dir."audit-$dateTime-00-00.csv";
+                return $this->dir . "/audit-$dateTime-00-00.csv";
 
             default:
                 throw new \InvalidArgumentException("File logging type {$this->fileLoggingType} unknown. Please use one of 'single', 'daily' or 'hourly'.");
