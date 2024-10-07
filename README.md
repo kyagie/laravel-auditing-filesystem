@@ -94,10 +94,10 @@ More information on using community drivers with owen-it/laravel-auditing can be
 
 This package can be tested with phpunit. You need to run `composer install` (With dev dependencies).
 
-By default, you will only be able to run `vendor/bin/phpunit --testsuite local`.
+By default, you will only be able to run `./vendor/bin/phpunit --testsuite local`.
 
 If you want to test with remote disks, you need to install [Docker](https://docs.docker.com/engine/install/ubuntu/) and [Docker Compose](https://docs.docker.com/compose/install/) beforehand.
 
-You need to run `docker-compose up -d` which will start a local s3 [minio](https://min.io/) instance which will allow testing remote disks.
+You need to run `docker compose up -d` which will start a local s3 [minio](https://min.io/) instance which will allow testing remote disks.
 
-You can now run `vendor/bin/phpunit` or `vendor/bin/phpunit --testsuite remote`
+You can now run `./vendor/bin/phpunit` or `./vendor/bin/phpunit --testsuite remote`
