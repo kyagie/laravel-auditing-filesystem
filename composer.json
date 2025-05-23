@@ -5,7 +5,7 @@
     "require": {
         "php": "^8.3",
         "ext-json": "*",
-        "owen-it/laravel-auditing": "^13.6",
+        "owen-it/laravel-auditing": "^14.0",
         "league/csv": "^9.16",
         "league/flysystem": "^3.29"
     },
